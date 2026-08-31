@@ -1,0 +1,19 @@
+/* Erica Type — display/heading typeface. Add the licensed files to
+   /public/assets/fonts/ (see the README there) and they'll load automatically.
+   The family name must stay exactly "Erica Type" (matching --font-display
+   in index.css) or the browser will silently fall back. */
+@font-face {
+  font-family: 'Erica Type';
+  src: url('/assets/fonts/EricaType-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Erica Type';
+  src: url('/assets/fonts/EricaType-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
