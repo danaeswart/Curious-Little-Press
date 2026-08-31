@@ -28,7 +28,7 @@ export default function HowToUse() {
 
         <Reveal as="div" delay={BASE_DELAY + SERVICES.length * 120 + 100} className="how-to-use__cta">
           <Link to="/gallery" className="btn">
-            <span className="btn-label">View our Gallery</span>
+            View our Gallery
           </Link>
         </Reveal>
       </div>

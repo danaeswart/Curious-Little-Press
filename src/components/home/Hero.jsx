@@ -20,7 +20,7 @@ export default function Hero() {
 
           <div className="hero__actions">
             <a href="/contact" className="btn">
-              <span className="btn-label">Get in Touch</span>
+              Get in Touch
             </a>
             <a href="#studio" className="link-arrow">
               Explore the Studio

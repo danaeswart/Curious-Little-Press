@@ -48,6 +48,8 @@
   font-weight: 400;
   color: #8b6510;
   border-color: #8b6510;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.3s var(--ease-out);
 }
 
 .hero__actions .btn:hover {
@@ -55,15 +57,7 @@
   border-color: #8b6510;
   color: #8b6510;
   transform: none;
-}
-
-.hero__actions .btn .btn-label {
-  display: inline-block;
-  transition: transform 0.25s var(--ease-out);
-}
-
-.hero__actions .btn:hover .btn-label {
-  transform: scale(1.06);
+  box-shadow: 0 0 0 1.5px #8b6510;
 }
 
 .hero__actions .link-arrow {

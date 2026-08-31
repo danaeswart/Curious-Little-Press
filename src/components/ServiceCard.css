@@ -1,16 +1,21 @@
 .service-card {
+  display: block;
   border: 1px solid #8b6510;
   border-radius: 20px;
   padding: 1.1rem 1.5rem 1.6rem;
   background: var(--color-bg);
-  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out),
-    border-color 0.4s var(--ease-out);
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.35s var(--ease-out);
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 30px -20px rgba(23, 21, 18, 0.35);
-  border-color: #8b6510;
+  box-shadow: 0 0 0 1px #8b6510;
+}
+
+.service-card__img-wrap {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
 }
 
 .service-card__img {
@@ -18,8 +23,6 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 1.25rem;
 }
 
 .service-card__title {
