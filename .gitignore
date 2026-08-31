@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Backup of pre-optimization camera-original images (see scripts/optimize-images.cjs)
+image-backup-original
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

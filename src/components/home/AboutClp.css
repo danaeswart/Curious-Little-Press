@@ -90,6 +90,11 @@
     height: 55vh;
   }
 
+  .about-clp__media-img {
+    transform: scale(1.1);
+    transform-origin: left center;
+  }
+
   .about-clp__content {
     padding-inline: var(--gutter);
   }

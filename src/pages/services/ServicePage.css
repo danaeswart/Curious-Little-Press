@@ -1,0 +1,122 @@
+.service-page {
+  padding-block: 0.5rem clamp(3rem, 7vw, 6rem);
+}
+
+.service-page--guidance {
+  padding-top: 2.5rem;
+}
+
+.service-page__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.service-page__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.service-page__col > p {
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.service-page__col > .btn,
+.service-page__img-wrap > .btn {
+  align-self: flex-start;
+  width: auto;
+  padding: 0.85rem 2.1rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #8b6510;
+  border-color: #8b6510;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.service-page__col > .btn.service-page__cta--wide {
+  padding-inline: 3.25rem;
+}
+
+.service-page__col > .btn.service-page__back,
+.service-page__img-wrap > .btn.service-page__back {
+  padding: 0.7rem 1.75rem;
+  font-size: 1rem;
+}
+
+.service-page__img-wrap {
+  position: relative;
+}
+
+.service-page__img-wrap .service-page__back--overlay {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 1;
+  background: var(--color-bg);
+}
+
+.service-page__col > .btn:hover,
+.service-page__img-wrap > .btn:hover {
+  background: transparent;
+  border-color: #8b6510;
+  color: #8b6510;
+  transform: none;
+  box-shadow: 0 0 0 1.5px #8b6510;
+}
+
+.service-page__img-wrap > .btn.service-page__back--overlay:hover {
+  background: var(--color-bg);
+}
+
+.service-page__title {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  margin-bottom: 0.25rem;
+  text-transform: none;
+}
+
+.service-page__img {
+  width: 100%;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.service-page__img--wide {
+  aspect-ratio: 4 / 3;
+}
+
+.service-page__img--tall {
+  aspect-ratio: 4 / 3;
+  margin-top: 0.5rem;
+}
+
+.service-page__img--push-down {
+  margin-top: 2rem;
+}
+
+.service-page__facts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.service-page__facts h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.service-page__facts p {
+  color: #000;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .service-page__grid {
+    grid-template-columns: 1fr;
+  }
+}

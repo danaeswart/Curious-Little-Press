@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import './Footer.css'
+import locationIcon from '../assets/icons/location.png'
+import phoneIcon from '../assets/icons/phone.png'
 
 const LINKS = [
   { label: 'Home', to: '/' },
@@ -22,16 +24,9 @@ export default function Footer() {
             Press
           </h3>
           <p className="site-footer__address">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"
-                stroke="currentColor"
-                strokeWidth="1.3"
-              />
-              <circle cx="12" cy="9.5" r="2.2" stroke="currentColor" strokeWidth="1.3" />
-            </svg>
+            <img src={locationIcon} alt="" aria-hidden="true" />
             <span>
-              219 Vonkrprop road, Samcor Park,
+              <strong>219 Vonkrprop road</strong>, Samcor Park,
               <br />
               Waltloo, Pretoria
             </span>
@@ -42,7 +37,11 @@ export default function Footer() {
           <ul>
             {LINKS.map((link) => (
               <li key={link.to}>
-                <NavLink to={link.to} end={link.to === '/'}>
+                <NavLink
+                  to={link.to}
+                  end={link.to === '/'}
+                  className={({ isActive }) => (isActive ? 'is-active' : '')}
+                >
                   {link.label}
                 </NavLink>
               </li>
@@ -51,21 +50,27 @@ export default function Footer() {
         </nav>
 
         <div className="site-footer__contact">
-          <p className="site-footer__label">For enquiries email us at:</p>
+          <p className="site-footer__label">For enquiries, bookings, or more information, email us at:</p>
           <a className="btn btn--pill" href="mailto:studio@curiouslittlepress.com">
             studio@curiouslittlepress.com
           </a>
           <p className="site-footer__label site-footer__label--spaced">Or call us on:</p>
-          <a className="site-footer__phone" href="tel:+27128032369">
-            +27 12 803 2369
+          <a className="site-footer__phone" href="tel:+27794479310">
+            <img src={phoneIcon} alt="" aria-hidden="true" className="site-footer__phone-icon" />
+            <div className="site-footer__phone-content">
+              <span className="site-footer__phone-number">+27 79 447 9310</span>
+              <div className="site-footer__phone-divider" aria-hidden="true" />
+              <span className="site-footer__phone-name">Marlene Salisbury</span>
+            </div>
           </a>
-          <p className="site-footer__label">Marlene Salisbury</p>
         </div>
       </div>
 
       <div className="container site-footer__bottom">
-        <p>© {new Date().getFullYear()} Curious Little Press. All rights reserved.</p>
-        <p>Ts &amp; Cs Apply</p>
+        <p className="site-footer__copyright">
+          © {new Date().getFullYear()} Curious Little Press. All rights reserved.
+        </p>
+        <p className="site-footer__terms">Ts &amp; Cs Apply</p>
       </div>
     </footer>
   )

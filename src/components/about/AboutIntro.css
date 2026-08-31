@@ -1,0 +1,105 @@
+.about-intro {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.about-intro__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.about-intro__row + .about-intro__row {
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.about-intro__row--reverse .about-intro__media {
+  order: -1;
+}
+
+.about-intro__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  margin-bottom: 1.5rem;
+}
+
+.about-intro__col p {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  color: var(--color-ink);
+  margin-bottom: 1.4rem;
+}
+
+.about-intro__btn {
+  font-size: clamp(1.05rem, 2vw, 1.375rem);
+  padding-inline: 3.25rem;
+  font-weight: 400;
+  color: #8b6510;
+  border-color: #8b6510;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.about-intro__btn--services {
+  margin-top: 1rem;
+}
+
+.about-intro__btn:hover {
+  background: transparent;
+  border-color: #8b6510;
+  color: #8b6510;
+  transform: none;
+  box-shadow: 0 0 0 1.5px #8b6510;
+}
+
+.about-intro__media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.about-intro__flight-title {
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  text-transform: none;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 1.4rem;
+}
+
+.about-intro__socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.about-intro__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.about-intro__social img {
+  width: clamp(64px, 7vw, 104px);
+  height: clamp(64px, 7vw, 104px);
+}
+
+.about-intro__social:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 860px) {
+  .about-intro__row {
+    grid-template-columns: 1fr;
+  }
+
+  .about-intro__row--reverse .about-intro__media {
+    order: 0;
+  }
+}

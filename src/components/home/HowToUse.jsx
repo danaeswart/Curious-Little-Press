@@ -20,7 +20,12 @@ export default function HowToUse() {
 
         <div className="how-to-use__grid">
           {SERVICES.map((service, i) => (
-            <Reveal as="div" key={service.slug} delay={BASE_DELAY + i * 120}>
+            <Reveal
+              as="div"
+              key={service.slug}
+              delay={BASE_DELAY + i * 120}
+              mobileRootMargin="0px 0px 25% 0px"
+            >
               <ServiceCard service={service} />
             </Reveal>
           ))}

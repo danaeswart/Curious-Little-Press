@@ -11,9 +11,10 @@ export default function Reveal({
   variant = 'up',
   delay = 0,
   className = '',
+  mobileRootMargin,
   ...rest
 }) {
-  const [ref, isInView] = useInView()
+  const [ref, isInView] = useInView({ mobileRootMargin })
 
   const variantClass =
     variant === 'fade'

@@ -1,15 +1,5 @@
-import PageIntro from '../components/PageIntro'
-import ContactSection from '../components/home/ContactSection'
+import HomeContactSection from '../components/home/HomeContactSection'
 
 export default function Contact() {
-  return (
-    <>
-      <PageIntro
-        eyebrow="Contact"
-        title="Get In Touch"
-        desc="Whether it's a booking, a workshop enquiry, or just a question — we'd love to hear from you."
-      />
-      <ContactSection />
-    </>
-  )
+  return <HomeContactSection />
 }

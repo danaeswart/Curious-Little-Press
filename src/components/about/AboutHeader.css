@@ -1,0 +1,39 @@
+.about-header {
+  position: relative;
+  height: min(78vh, 720px);
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.about-header__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-header__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.about-header__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-header__title {
+  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  line-height: 0.95;
+  color: #fff;
+  text-transform: none;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.about-header__title-line {
+  display: block;
+}

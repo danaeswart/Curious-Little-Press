@@ -13,6 +13,7 @@
 }
 
 .service-card__img-wrap {
+  position: relative;
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 1.25rem;
@@ -25,6 +26,17 @@
   object-fit: cover;
 }
 
+.service-card__img--hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.45s var(--ease-out);
+}
+
+.service-card:hover .service-card__img--hover {
+  opacity: 1;
+}
+
 .service-card__title {
   display: inline-flex;
   align-items: center;
@@ -32,7 +44,6 @@
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
-  text-transform: uppercase;
   color: var(--color-ink);
   margin-bottom: 0.6rem;
 }
@@ -48,7 +59,9 @@
 }
 
 .service-card__desc {
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: 1.1rem;
-  color: var(--color-ink);
+  color: #000;
   max-width: 22ch;
 }

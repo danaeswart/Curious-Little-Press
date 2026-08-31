@@ -15,7 +15,13 @@ export default function ServiceDetail() {
     <article className="service-detail">
       <Reveal as="div" className="container service-detail__row">
         <div className="service-detail__media">
-          <img className="service-detail__media-img" src={service.image} alt={service.title} />
+          <img
+            className="service-detail__media-img"
+            src={service.image}
+            alt={service.title}
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
 
         <div className="service-detail__content">

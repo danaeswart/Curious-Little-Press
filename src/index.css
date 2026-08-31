@@ -11,6 +11,7 @@
 
   --font-display: 'Erica Type', 'Courier New', ui-monospace, monospace;
   --font-body: 'Poppins', system-ui, sans-serif;
+  --font-script: 'Dancing Script', 'Parisienne', 'Nautilus Pompilius', cursive;
 
   --gutter: clamp(1.25rem, 4vw, 4rem);
   --header-h: 93px;
@@ -211,6 +212,7 @@ p {
 @media (max-width: 860px) {
   :root {
     --header-h: 78px;
+    --gutter: clamp(1.75rem, 6vw, 4rem);
   }
 }
 

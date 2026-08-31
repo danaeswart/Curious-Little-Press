@@ -5,7 +5,21 @@ export default function ServiceCard({ service }) {
   return (
     <Link to={`/services/${service.slug}`} className="service-card">
       <div className="service-card__img-wrap">
-        <img className="service-card__img" src={service.image} alt={service.title} loading="lazy" />
+        <img
+          className="service-card__img service-card__img--default"
+          src={service.image}
+          alt={service.title}
+          loading="lazy"
+        />
+        {service.hoverImage && (
+          <img
+            className="service-card__img service-card__img--hover"
+            src={service.hoverImage}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+        )}
       </div>
       <span className="service-card__title">
         {service.title}

@@ -1,0 +1,236 @@
+.home-contact {
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.home-contact__row {
+  display: grid;
+  grid-template-columns: 0.85fr auto 1.15fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.home-contact__divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--color-border);
+}
+
+.home-contact__title {
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  margin-bottom: clamp(0.6rem, 1.5vw, 1rem);
+}
+
+.home-contact__lead {
+  font-size: 1.1rem;
+  color: var(--color-ink);
+  max-width: 34ch;
+  margin-bottom: 1rem;
+}
+
+.home-contact__email {
+  border-radius: 999px;
+  padding: 1.1rem 2rem;
+  color: #8b6510;
+  border-color: #8b6510;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.home-contact__email:hover {
+  background: transparent;
+  border-color: #8b6510;
+  color: #8b6510;
+  transform: none;
+  box-shadow: 0 0 0 1.5px #8b6510;
+}
+
+.home-contact__label {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+
+.home-contact__label--flight {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.home-contact__phones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.home-contact__phone-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 88%;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.home-contact__phone-link:hover {
+  transform: translateY(-2px);
+}
+
+.home-contact__phone-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.home-contact__phone-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.home-contact__phone-number {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #8b6510;
+  margin-bottom: 0.5rem;
+}
+
+.home-contact__phone-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin-bottom: 0.5rem;
+}
+
+.home-contact__phone-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--color-ink);
+}
+
+.home-contact__socials {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.home-contact__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.15rem;
+  color: var(--color-ink);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.home-contact__social-icon {
+  width: 88px;
+  height: 88px;
+}
+
+.home-contact__social:hover {
+  transform: translateY(-3px);
+}
+
+.home-contact__map-col {
+  text-align: center;
+}
+
+.home-contact__map-wrap {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+}
+
+.home-contact__map {
+  display: block;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.home-contact__map-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.45s var(--ease-out);
+}
+
+.home-contact__map-img--hover {
+  opacity: 0;
+}
+
+.home-contact__map:hover .home-contact__map-img--default {
+  opacity: 0;
+}
+
+.home-contact__map:hover .home-contact__map-img--hover {
+  opacity: 1;
+}
+
+.home-contact__address {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.home-contact__directions {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-ink);
+  max-width: 72ch;
+  margin: 0 auto 2rem;
+}
+
+.home-contact__map-btn {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  padding-inline: 2.5rem;
+  font-weight: 400;
+  color: #8b6510;
+  border-color: #8b6510;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.home-contact__map-btn:hover {
+  background: transparent;
+  border-color: #8b6510;
+  color: #8b6510;
+  transform: none;
+  box-shadow: 0 0 0 1.5px #8b6510;
+}
+
+@media (max-width: 900px) {
+  .home-contact__row {
+    grid-template-columns: 1fr;
+  }
+
+  .home-contact__divider {
+    width: auto;
+    height: 1px;
+  }
+
+  .home-contact__map-col {
+    text-align: left;
+  }
+
+  .home-contact__map-wrap,
+  .home-contact__directions {
+    margin-left: 0;
+  }
+
+  .home-contact__phone-link {
+    max-width: 100%;
+  }
+}

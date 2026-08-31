@@ -1,15 +1,21 @@
 # Fonts
 
-Drop the licensed **Erica Type** font files here and they will be picked up automatically
-(referenced from `src/styles/fonts.css`):
+**Erica Type** — display/heading typeface, referenced from `src/styles/fonts.css`:
 
-- `EricaType-Regular.woff2`
-- `EricaType-Bold.woff2`
+- `Erika Type.ttf` (regular)
+- `Erika Type_B.ttf` (bold)
+- `Erika Type_I.ttf` (italic)
+- `Erika Type_BI.ttf` (bold italic)
 
 The CSS `font-family` is set to `'Erica Type'` (with the space) — that has to match
 exactly, since browsers fall back silently on a mismatched family name.
 
-Until those files exist, the site falls back to a bold monospaced system stack so the
-display headings still read as blocky/typewriter-style like the design.
+**Nautilus Pompilius** — script/italic display typeface used for the About page's
+flight-path timeline titles:
+
+- `Nautilus.otf`
+
+The CSS `font-family` is set to `'Nautilus Pompilius'` (with the space) — same rule as
+above, it has to match exactly.
 
 **Poppins** (body copy) is loaded from Google Fonts in `index.html`, no local files needed.

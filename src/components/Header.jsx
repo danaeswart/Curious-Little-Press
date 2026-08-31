@@ -23,8 +23,10 @@ export default function Header() {
   }, [])
 
   useEffect(() => {
+    document.documentElement.style.overflow = menuOpen ? 'hidden' : ''
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => {
+      document.documentElement.style.overflow = ''
       document.body.style.overflow = ''
     }
   }, [menuOpen])

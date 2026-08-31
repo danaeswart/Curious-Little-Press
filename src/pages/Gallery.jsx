@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import Reveal from '../components/Reveal'
 import PageIntro from '../components/PageIntro'
 import './Gallery.css'
@@ -53,7 +54,57 @@ function buildGallery() {
 
 const GALLERY_ITEMS = buildGallery()
 
+// Only the images visible without scrolling need to load immediately; the
+// rest stay native-lazy so the browser fetches them just before they're
+// needed instead of competing with the first paint.
+const EAGER_COUNT = 8
+
+// CSS multi-column ("balance" fill) badly miscalculates column height once a
+// container gets this tall with this many break-inside:avoid children — it's
+// a real Chromium/WebKit bug, not a timing issue, and produces huge blank
+// gaps followed by stray scattered images. A CSS-grid-based masonry (fixed
+// tiny row unit, each item spans however many rows its rendered image needs)
+// sidesteps that entirely, at the cost of computing spans in JS.
+const ROW_UNIT_PX = 8
+
+function useMasonryLayout(gridRef, itemCount) {
+  useEffect(() => {
+    const grid = gridRef.current
+    if (!grid) return
+
+    let frame = null
+    const relayout = () => {
+      if (frame) cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const styles = getComputedStyle(grid)
+        const rowGap = parseFloat(styles.rowGap) || 0
+        grid.querySelectorAll('.press-gallery__item').forEach((item) => {
+          const img = item.querySelector('img')
+          if (!img || !img.complete || img.naturalWidth === 0) return
+          const height = img.getBoundingClientRect().height
+          const span = Math.ceil((height + rowGap) / (ROW_UNIT_PX + rowGap))
+          item.style.gridRowEnd = `span ${span}`
+        })
+      })
+    }
+
+    const images = Array.from(grid.querySelectorAll('img'))
+    images.forEach((img) => img.addEventListener('load', relayout))
+    relayout()
+    window.addEventListener('resize', relayout)
+
+    return () => {
+      images.forEach((img) => img.removeEventListener('load', relayout))
+      window.removeEventListener('resize', relayout)
+      if (frame) cancelAnimationFrame(frame)
+    }
+  }, [gridRef, itemCount])
+}
+
 export default function Gallery() {
+  const gridRef = useRef(null)
+  useMasonryLayout(gridRef, GALLERY_ITEMS.length)
+
   return (
     <>
       <PageIntro
@@ -63,12 +114,23 @@ export default function Gallery() {
       />
 
       <section className="press-gallery">
-        <Reveal as="div" className="container press-gallery__grid">
-          {GALLERY_ITEMS.map((item) => (
-            <figure className="press-gallery__item" key={item.filename}>
-              <img src={item.src} alt={item.caption} loading="lazy" />
-            </figure>
-          ))}
+        <Reveal as="div" className="container">
+          <div className="press-gallery__grid" ref={gridRef}>
+            {GALLERY_ITEMS.map((item, index) => {
+              const isEager = index < EAGER_COUNT
+              return (
+                <figure className="press-gallery__item" key={item.filename}>
+                  <img
+                    src={item.src}
+                    alt={item.caption}
+                    loading={isEager ? 'eager' : 'lazy'}
+                    fetchPriority={isEager ? 'high' : 'auto'}
+                    decoding="async"
+                  />
+                </figure>
+              )
+            })}
+          </div>
         </Reveal>
 
         <Reveal as="div" className="container press-gallery__cta">

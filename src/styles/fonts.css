@@ -1,10 +1,10 @@
-/* Erica Type — display/heading typeface. Add the licensed files to
-   /public/assets/fonts/ (see the README there) and they'll load automatically.
-   The family name must stay exactly "Erica Type" (matching --font-display
-   in index.css) or the browser will silently fall back. */
+/* Erica Type — display/heading typeface. Files live in /public/assets/fonts/
+   (see the README there). The family name must stay exactly "Erica Type"
+   (matching --font-display in index.css) or the browser will silently
+   fall back. */
 @font-face {
   font-family: 'Erica Type';
-  src: url('/assets/fonts/EricaType-Regular.woff2') format('woff2');
+  src: url('/assets/fonts/Erika Type.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -12,8 +12,36 @@
 
 @font-face {
   font-family: 'Erica Type';
-  src: url('/assets/fonts/EricaType-Bold.woff2') format('woff2');
+  src: url('/assets/fonts/Erika Type_B.ttf') format('truetype');
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Erica Type';
+  src: url('/assets/fonts/Erika Type_I.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Erica Type';
+  src: url('/assets/fonts/Erika Type_BI.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Nautilus Pompilius — script/italic display typeface used for the About
+   page flight-path timeline. The family name must stay exactly
+   "Nautilus Pompilius" (matching --font-script in index.css) or the
+   browser will silently fall back to the italic serif stack. */
+@font-face {
+  font-family: 'Nautilus Pompilius';
+  src: url('/assets/fonts/Nautilus.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
