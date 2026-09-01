@@ -2,34 +2,34 @@
   display: flex;
   align-items: center;
   min-height: 100svh;
-  padding-block: clamp(3rem, 7vw, 5rem);
+  padding-block: clamp(2.25rem, 5vw, 3.75rem);
   background: var(--color-bg);
 }
 
 .how-to-use .container {
-  scroll-margin-top: var(--header-h);
+  scroll-margin-top: calc(var(--header-h) - 15px);
 }
 
 .how-to-use__title {
-  font-size: clamp(2.5rem, 5.5vw, 4rem);
-  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  font-size: clamp(2.1rem, 4.5vw, 3.25rem);
+  margin-bottom: clamp(1rem, 2.25vw, 1.5rem);
 }
 
 .how-to-use__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(1.75rem, 3vw, 3rem);
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(1.25rem, 2.25vw, 2.25rem);
 }
 
 .how-to-use__cta {
   display: flex;
   justify-content: center;
-  margin-top: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(1rem, 2vw, 1.5rem);
 }
 
 .how-to-use__cta .btn {
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
-  padding: 0.55rem 1.6rem;
+  font-size: clamp(0.9rem, 1.25vw, 1rem);
+  padding-inline: 2.4rem;
   font-weight: 400;
   color: #8b6510;
   border-color: #8b6510;
@@ -53,5 +53,6 @@
 
   .how-to-use__cta .btn {
     width: 100%;
+    font-size: 1.05rem;
   }
 }

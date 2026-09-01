@@ -5,7 +5,7 @@
 }
 
 .site-footer .container {
-  padding-inline: clamp(0.25rem, 0.75vw, 0.75rem);
+  padding-inline: clamp(1.5rem, 4vw, 4rem);
 }
 
 .site-footer__grid {
@@ -48,7 +48,7 @@
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.3rem;
+  gap: 0;
 }
 
 .site-footer__nav a {
@@ -57,7 +57,7 @@
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--color-ink);
-  padding-bottom: 0.35rem;
+  padding-bottom: 0.1rem;
   transition: color 0.3s var(--ease-out);
 }
 
@@ -87,7 +87,7 @@
 }
 
 .site-footer__label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: var(--color-ink);
 }
@@ -98,10 +98,10 @@
 
 .btn--pill {
   border-radius: 999px;
-  padding: 0.45rem 1rem;
+  padding: 0.35rem 0.85rem;
   color: #8b6510;
   border-color: #8b6510;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   box-shadow: 0 0 0 0 transparent;
   transition: box-shadow 0.3s var(--ease-out);
 }
@@ -117,12 +117,17 @@
 .site-footer__phone {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.site-footer__phone:hover {
+  transform: translateY(-2px);
 }
 
 .site-footer__phone-icon {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -136,20 +141,20 @@
   display: block;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--color-accent-dark);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .site-footer__phone-divider {
   height: 1px;
   background: var(--color-border);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .site-footer__phone-name {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 400;
   color: var(--color-ink);
 }
@@ -188,6 +193,7 @@
 
   .site-footer__brand h3 {
     order: 1;
+    font-size: 1.8rem;
   }
 
   .site-footer__nav {
@@ -195,7 +201,7 @@
   }
 
   .site-footer__contact {
-    order: 2;
+    order: 3;
     align-items: flex-start;
     width: 100%;
   }
@@ -203,6 +209,8 @@
   .site-footer__contact .btn--pill {
     display: flex;
     width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
   }
 
   .site-footer__phone {
@@ -210,8 +218,21 @@
   }
 
   .site-footer__address {
-    order: 3;
+    order: 2;
+    margin-top: -0.8rem;
     text-align: left;
+  }
+
+  .site-footer__label {
+    font-size: 1rem;
+  }
+
+  .site-footer__phone-number {
+    font-size: 1.15rem;
+  }
+
+  .site-footer__phone-name {
+    font-size: 0.9rem;
   }
 
   .site-footer__bottom {

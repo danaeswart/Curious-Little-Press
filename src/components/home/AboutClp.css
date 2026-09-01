@@ -33,8 +33,8 @@
 }
 
 .about-clp__title {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  margin-bottom: clamp(1.25rem, 2.6vw, 2.15rem);
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  margin-bottom: clamp(1.1rem, 2.2vw, 1.85rem);
 }
 
 .about-clp__list {
@@ -50,7 +50,7 @@
   gap: 1.25rem;
   padding-block: clamp(0.85rem, 1.75vw, 1.2rem);
   border-bottom: 1px solid var(--color-border);
-  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
   transition: padding-left 0.35s var(--ease-out);
 }
 
@@ -96,6 +96,14 @@
   }
 
   .about-clp__content {
-    padding-inline: var(--gutter);
+    padding-inline: clamp(2rem, 9vw, 3rem);
+  }
+
+  .about-clp__list li {
+    font-size: 1rem;
+  }
+
+  .about-clp__link {
+    font-size: 1.15rem;
   }
 }

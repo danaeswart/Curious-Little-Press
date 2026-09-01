@@ -18,13 +18,25 @@ export default function Hero() {
             Curious Little Press is an open printmaking studio in Pretoria offering
             professional facilities, workshops, and collaborative opportunities.
           </p>
+
+          <div className="hero__actions hero__actions--desktop">
+            <Link to="/contact" className="btn">
+              Get in Touch
+            </Link>
+            <a href="#studio" className="link-arrow">
+              Explore the Studio
+              <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div className="hero__art">
           <img className="hero__art-img" src={heroImg} alt="Illustration of a crow perched on a printing press" />
         </div>
 
-        <div className="hero__actions">
+        <div className="hero__actions hero__actions--mobile">
           <Link to="/contact" className="btn">
             Get in Touch
           </Link>

@@ -1,9 +1,14 @@
 .service-page {
-  padding-block: 0.5rem clamp(3rem, 7vw, 6rem);
+  padding-block: 0 clamp(2.5rem, 6vw, 5rem);
+}
+
+.service-page .reveal {
+  transform: translateY(24px);
+  transition: opacity 1.6s var(--ease-out), transform 1.6s var(--ease-out);
 }
 
 .service-page--guidance {
-  padding-top: 2.5rem;
+  padding-top: 0.4rem;
 }
 
 .service-page__grid {
@@ -16,12 +21,12 @@
 .service-page__col {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.05rem;
 }
 
 .service-page__col > p {
   color: #000;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .service-page__col > .btn,
@@ -73,8 +78,8 @@
 }
 
 .service-page__title {
-  font-size: clamp(2.2rem, 5vw, 3rem);
-  margin-bottom: 0.25rem;
+  font-size: clamp(1.85rem, 4.2vw, 2.5rem);
+  margin-bottom: 0.2rem;
   text-transform: none;
 }
 
@@ -100,19 +105,19 @@
 .service-page__facts {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  padding-top: 0.5rem;
+  gap: 1.05rem;
+  padding-top: 0.4rem;
 }
 
 .service-page__facts h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 0;
   text-transform: none;
 }
 
 .service-page__facts p {
   color: #000;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 @media (max-width: 900px) {

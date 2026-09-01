@@ -45,7 +45,12 @@ export default function AboutClp() {
             ))}
           </ul>
 
-          <Reveal as="div" delay={POINTS.length * 130 + 100}>
+          <Reveal
+            as="div"
+            delay={200}
+            rootMargin="0px 0px 20% 0px"
+            mobileRootMargin="0px 0px 25% 0px"
+          >
             <Link to="/about" className="link-arrow about-clp__link">
               Get to Know Us
               <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
