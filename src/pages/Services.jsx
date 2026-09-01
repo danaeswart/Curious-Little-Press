@@ -11,11 +11,7 @@ export default function Services() {
     <section className="services-page">
       <div className="container">
         <Reveal as="div" delay={BASE_DELAY}>
-          <h1 className="services-page__title">
-            How To Use
-            <br />
-            The Studio
-          </h1>
+          <h1 className="services-page__title">How To Use The Studio</h1>
         </Reveal>
 
         <div className="services-page__grid">
@@ -26,7 +22,13 @@ export default function Services() {
           ))}
         </div>
 
-        <Reveal as="div" delay={BASE_DELAY + SERVICES.length * 120 + 100} className="services-page__cta">
+        <Reveal
+          as="div"
+          delay={BASE_DELAY + SERVICES.length * 120 + 100}
+          className="services-page__cta"
+          rootMargin="0px 0px 100% 0px"
+          mobileRootMargin="0px 0px 100% 0px"
+        >
           <Link to="/contact" className="btn">
             Get in Touch
           </Link>

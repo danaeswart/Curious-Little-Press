@@ -10,7 +10,7 @@ export default function AboutIntro() {
   return (
     <section className="about-intro">
       <div className="container about-intro__row">
-        <Reveal as="div" className="about-intro__col">
+        <Reveal as="div" className="about-intro__col about-intro__col--top">
           <h2 className="about-intro__heading">Curious Little Press Studio</h2>
 
           <p>
@@ -24,7 +24,18 @@ export default function AboutIntro() {
             Through this program studio artists have access to a professional printmaking
             studio, and a chance to interact with other fine artists and printmakers.
           </p>
+        </Reveal>
 
+        <div className="about-intro__media">
+          <img
+            src={img1Group}
+            alt="Studio artists gathered around a printing press"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <Reveal as="div" className="about-intro__col about-intro__col--bottom">
           <p>
             Studio artists work on an independent basis to produce their own prints. CLP
             studio rental is designed specifically for individuals who have demonstrated an
@@ -37,15 +48,6 @@ export default function AboutIntro() {
             View our Services
           </Link>
         </Reveal>
-
-        <div className="about-intro__media">
-          <img
-            src={img1Group}
-            alt="Studio artists gathered around a printing press"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
       </div>
 
       <div className="container about-intro__row about-intro__row--reverse">

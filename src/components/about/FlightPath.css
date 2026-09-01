@@ -1,12 +1,12 @@
 .flight-path {
-  padding-block: clamp(3.5rem, 8vw, 6rem) clamp(2rem, 6vw, 4rem);
+  padding-block: clamp(0.5rem, 1.2vw, 0.85rem) 0;
 }
 
 .flight-path__title {
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-size: clamp(1.9rem, 4vw, 3rem);
   text-align: center;
   text-transform: none;
-  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: clamp(2rem, 4.5vw, 3rem);
 }
 
 .flight-path__body {
@@ -38,6 +38,10 @@
 
 .flight-path__list-item {
   padding-block: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.flight-path__list-item:last-child {
+  padding-bottom: 0;
 }
 
 .flight-path__row {
@@ -85,10 +89,14 @@
     max-width: 100%;
   }
 
+  .flight-path {
+    padding-bottom: clamp(2rem, 6vw, 3rem);
+  }
+
   .flight-path__feather-wrap {
     position: absolute;
     top: 2%;
-    left: calc(-1 * var(--gutter) - 130px);
+    left: calc(-1 * var(--gutter) - 30px);
     height: 100%;
   }
 
@@ -97,6 +105,21 @@
   }
 
   .flight-path__list {
-    padding-left: clamp(56px, 16vw, 80px);
+    padding-left: clamp(100px, 25vw, 130px);
+    padding-right: 0;
+  }
+
+  .flight-path__item-title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .flight-path__rule {
+    display: none;
+  }
+
+  .flight-path__item {
+    max-width: 22ch;
   }
 }
