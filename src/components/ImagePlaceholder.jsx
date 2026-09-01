@@ -26,7 +26,7 @@ export default function ImagePlaceholder({
     >
       {!failed && (
         <img
-          src={`/assets/images/${name}`}
+          src={`${import.meta.env.BASE_URL}assets/images/${name}`}
           alt={label || ''}
           loading="lazy"
           onError={() => setFailed(true)}
