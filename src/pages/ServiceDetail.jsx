@@ -34,9 +34,9 @@ export default function ServiceDetail() {
           <span className="eyebrow">How To Use The Studio</span>
           <h1 className="service-detail__title">{service.title}</h1>
           <p className="service-detail__desc">{service.detail}</p>
-          <a href="/contact" className="btn">
+          <Link to="/contact" className="btn">
             Enquire About This
-          </a>
+          </Link>
         </div>
       </Reveal>
 

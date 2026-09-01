@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Reveal from '../Reveal'
 import cplImg from '../../assets/home/wiCPL.JPG'
 import './AboutClp.css'
@@ -45,12 +46,12 @@ export default function AboutClp() {
           </ul>
 
           <Reveal as="div" delay={POINTS.length * 130 + 100}>
-            <a href="/about" className="link-arrow about-clp__link">
+            <Link to="/about" className="link-arrow about-clp__link">
               Get to Know Us
               <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </a>
+            </Link>
           </Reveal>
         </div>
       </div>

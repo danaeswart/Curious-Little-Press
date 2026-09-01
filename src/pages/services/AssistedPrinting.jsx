@@ -10,12 +10,12 @@ export default function AssistedPrinting() {
       <div className="container service-page__grid">
         <Reveal as="div" className="service-page__col">
           <div className="service-page__img-wrap">
-            <a href="/#studio" className="btn service-page__back service-page__back--overlay">
+            <Link to="/#studio" className="btn service-page__back service-page__back--overlay">
               <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
                 <path d="M13 8H3M7 4 3 8l4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               Back to Services
-            </a>
+            </Link>
 
             <img
               className="service-page__img service-page__img--tall"
@@ -50,9 +50,9 @@ export default function AssistedPrinting() {
             </p>
           </div>
 
-          <a href="/#studio" className="btn service-page__cta--wide">
+          <Link to="/#studio" className="btn service-page__cta--wide">
             View more Services
-          </a>
+          </Link>
         </Reveal>
 
         <Reveal as="div" className="service-page__col" delay={150}>

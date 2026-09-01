@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Reveal from '../Reveal'
 import img1Group from '../../assets/about/img1group.JPG'
 import img2Group from '../../assets/about/img2group.JPG'
@@ -32,9 +33,9 @@ export default function AboutIntro() {
             intaglio, monotype and screen printing.
           </p>
 
-          <a href="/#studio" className="btn about-intro__btn about-intro__btn--services">
+          <Link to="/#studio" className="btn about-intro__btn about-intro__btn--services">
             View our Services
-          </a>
+          </Link>
         </Reveal>
 
         <div className="about-intro__media">
@@ -67,9 +68,9 @@ export default function AboutIntro() {
             CLP studio offer the artist a trained printer to guide the artist.
           </p>
 
-          <a href="/contact" className="btn about-intro__btn">
+          <Link to="/contact" className="btn about-intro__btn">
             Get in Touch
-          </a>
+          </Link>
 
           <h3 className="about-intro__flight-title">Follow Our Flight</h3>
 

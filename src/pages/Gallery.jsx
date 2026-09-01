@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import PageIntro from '../components/PageIntro'
 import './Gallery.css'
@@ -134,10 +135,10 @@ export default function Gallery() {
         </Reveal>
 
         <Reveal as="div" className="container press-gallery__cta">
-          <a href="/contact" className="btn">
+          <Link to="/contact" className="btn">
             Get in Touch
-          </a>
-          <a href="/#studio" className="link-arrow">
+          </Link>
+          <Link to="/#studio" className="link-arrow">
             Explore the Studio
             <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
               <path
@@ -148,7 +149,7 @@ export default function Gallery() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
         </Reveal>
       </section>
     </>
