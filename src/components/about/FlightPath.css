@@ -80,6 +80,23 @@
 
 @media (max-width: 760px) {
   .flight-path__body {
-    gap: 1.25rem;
+    display: block;
+    position: relative;
+    max-width: 100%;
+  }
+
+  .flight-path__feather-wrap {
+    position: absolute;
+    top: 2%;
+    left: calc(-1 * var(--gutter) - 130px);
+    height: 100%;
+  }
+
+  .flight-path__feather {
+    transform: none;
+  }
+
+  .flight-path__list {
+    padding-left: clamp(56px, 16vw, 80px);
   }
 }

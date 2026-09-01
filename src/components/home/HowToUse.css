@@ -12,7 +12,7 @@
 
 .how-to-use__title {
   font-size: clamp(2.5rem, 5.5vw, 4rem);
-  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
 .how-to-use__grid {
@@ -28,8 +28,8 @@
 }
 
 .how-to-use__cta .btn {
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
-  padding-inline: 2.4rem;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  padding: 0.55rem 1.6rem;
   font-weight: 400;
   color: #8b6510;
   border-color: #8b6510;
