@@ -28,8 +28,8 @@
 .service-page__img-wrap > .btn {
   align-self: flex-start;
   width: auto;
-  padding: 0.85rem 2.1rem;
-  font-size: 1.15rem;
+  padding: 0.7rem 1.75rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #8b6510;
   border-color: #8b6510;
@@ -38,12 +38,12 @@
 }
 
 .service-page__col > .btn.service-page__cta--wide {
-  padding-inline: 3.25rem;
+  padding-inline: 2.6rem;
 }
 
 .service-page__col > .btn.service-page__back,
 .service-page__img-wrap > .btn.service-page__back {
-  padding: 0.7rem 1.75rem;
+  padding: 0.6rem 1.5rem;
   font-size: 1rem;
 }
 

@@ -32,7 +32,7 @@
 
 .home-contact__email {
   border-radius: 999px;
-  padding: 0.9rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   color: #8b6510;
   border-color: #8b6510;
   margin-bottom: 1.5rem;
@@ -194,8 +194,8 @@
 }
 
 .home-contact__map-btn {
-  font-size: clamp(1rem, 1.4vw, 1.05rem);
-  padding-inline: 2.15rem;
+  font-size: 1rem;
+  padding-inline: 1.85rem;
   font-weight: 400;
   color: #8b6510;
   border-color: #8b6510;
