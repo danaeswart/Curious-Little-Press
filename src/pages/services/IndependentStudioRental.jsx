@@ -55,7 +55,7 @@ export default function IndependentStudioRental() {
           </Link>
         </Reveal>
 
-        <Reveal as="div" className="service-page__col" delay={150}>
+        <Reveal as="div" className="service-page__col" delay={250}>
           <h1 className="service-page__title">Independent Studio Rental</h1>
 
           <p>

@@ -2,9 +2,18 @@
   padding-block: 0 clamp(2.5rem, 6vw, 5rem);
 }
 
+/* second column's delay prop is intentionally shorter than this duration, so it starts while the first
+   column is still mid-slide - the two read as one near-unison motion, with the first still leading.
+   Uses a gentler, more even easing than the site-wide --ease-out (which is front-loaded and makes fast fades
+   pop into view almost instantly, then keep drifting) so the column reads as one continuous glide upward. */
 .service-page .reveal {
-  transform: translateY(24px);
-  transition: opacity 1.6s var(--ease-out), transform 1.6s var(--ease-out);
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* higher specificity than the base .reveal.is-visible rule, needed so this override doesn't also pin the settled state */
+.service-page .reveal.is-visible {
+  transform: translateY(0);
 }
 
 .service-page--guidance {

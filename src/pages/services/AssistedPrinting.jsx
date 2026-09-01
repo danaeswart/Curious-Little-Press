@@ -55,7 +55,7 @@ export default function AssistedPrinting() {
           </Link>
         </Reveal>
 
-        <Reveal as="div" className="service-page__col" delay={150}>
+        <Reveal as="div" className="service-page__col" delay={250}>
           <h1 className="service-page__title">Assisted Printing/Technical Guidance</h1>
 
           <p>

@@ -50,7 +50,7 @@ export default function PrintingWorkshops() {
           />
         </Reveal>
 
-        <Reveal as="div" className="service-page__col" delay={150}>
+        <Reveal as="div" className="service-page__col" delay={250}>
           <img
             className="service-page__img service-page__img--wide"
             src={workshop1}
