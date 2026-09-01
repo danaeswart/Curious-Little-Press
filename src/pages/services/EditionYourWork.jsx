@@ -6,7 +6,7 @@ import './ServicePage.css'
 
 export default function EditionYourWork() {
   return (
-    <article className="service-page">
+    <article className="service-page service-page--edition">
       <div className="container service-page__grid">
         <Reveal as="div" className="service-page__col">
           <Link to="/#studio" className="btn service-page__back">

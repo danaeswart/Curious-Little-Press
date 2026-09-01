@@ -135,10 +135,11 @@
   }
 
   /* Independent Studio Rental / Assisted Printing share this layout: on
-     mobile the mockup wants back button -> title -> image -> copy -> CTA ->
-     image -> facts -> CTA, which doesn't match the desktop col1/col2 DOM
-     order. Flatten the column wrappers so their children join the grid
-     directly, then re-sequence with `order`. */
+     mobile, back button -> title -> image -> copy -> facts -> CTA -> image ->
+     CTA, which doesn't match the desktop col1/col2 DOM order. Flatten the
+     column wrappers so their children join the grid directly, then
+     re-sequence with `order`. Facts sit right after the intro copy (rather
+     than near the bottom) so the studio details read earlier on mobile. */
   .service-page--guidance .service-page__col,
   .service-page--guidance .service-page__img-wrap {
     display: contents;
@@ -167,19 +168,86 @@
     order: 4;
   }
 
-  .service-page--guidance a[href="/contact"].service-page__cta--wide {
+  .service-page--guidance .service-page__facts {
     order: 5;
   }
 
-  .service-page--guidance .service-page__img--wide.service-page__img--push-down {
+  .service-page--guidance .service-page__cta--contact {
     order: 6;
   }
 
-  .service-page--guidance .service-page__facts {
+  .service-page--guidance .service-page__img--wide.service-page__img--push-down {
     order: 7;
   }
 
-  .service-page--guidance a[href="/#studio"].service-page__cta--wide {
+  .service-page--guidance .service-page__cta--services {
     order: 8;
+  }
+
+  /* Independent Studio Rental / Assisted Printing: pull the 2nd image +
+     "View more Services" up before the facts block instead of after it.
+     Higher-specificity overrides of the shared guidance-layout order above. */
+  .service-page--guidance.service-page--facts-after-media .service-page__img--wide.service-page__img--push-down {
+    order: 5;
+    /* Cancel most of the desktop push-down margin and the grid row-gap above
+       (leaving a small gap), since the image now follows the intro copy
+       immediately instead of the CTA/facts it was spaced for on desktop. */
+    margin-top: calc(-1 * clamp(2rem, 5vw, 4rem) + 0.75rem);
+  }
+
+  .service-page--guidance.service-page--facts-after-media .service-page__cta--services {
+    order: 6;
+  }
+
+  .service-page--guidance.service-page--facts-after-media .service-page__facts {
+    order: 7;
+  }
+
+  .service-page--guidance.service-page--facts-after-media .service-page__cta--contact {
+    order: 8;
+  }
+
+  /* Printing Workshops: move the tall image (last in col1 on desktop) up to
+     sit right under the title, matching the other service detail pages. */
+  .service-page--workshops .service-page__col > .service-page__back {
+    order: 1;
+  }
+
+  .service-page--workshops .service-page__col > .service-page__title {
+    order: 2;
+  }
+
+  .service-page--workshops .service-page__col > .service-page__img--tall {
+    order: 3;
+  }
+
+  .service-page--workshops .service-page__col > p {
+    order: 4;
+  }
+
+  .service-page--workshops .service-page__col > .btn[aria-disabled] {
+    order: 5;
+  }
+
+  /* Professional Printing on Behalf of the Artist: same treatment as
+     Printing Workshops - move the tall image up under the title. */
+  .service-page--edition .service-page__col > .service-page__back {
+    order: 1;
+  }
+
+  .service-page--edition .service-page__col > .service-page__title {
+    order: 2;
+  }
+
+  .service-page--edition .service-page__col > .service-page__img--tall {
+    order: 3;
+  }
+
+  .service-page--edition .service-page__col > p {
+    order: 4;
+  }
+
+  .service-page--edition .service-page__col:first-child > .service-page__cta--wide {
+    order: 5;
   }
 }

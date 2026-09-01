@@ -6,7 +6,7 @@ import './ServicePage.css'
 
 export default function AssistedPrinting() {
   return (
-    <article className="service-page service-page--guidance">
+    <article className="service-page service-page--guidance service-page--facts-after-media">
       <div className="container service-page__grid">
         <Reveal as="div" className="service-page__col">
           <div className="service-page__img-wrap">
@@ -50,7 +50,7 @@ export default function AssistedPrinting() {
             </p>
           </div>
 
-          <Link to="/#studio" className="btn service-page__cta--wide">
+          <Link to="/#studio" className="btn service-page__cta--wide service-page__cta--services">
             View more Services
           </Link>
         </Reveal>
@@ -80,7 +80,7 @@ export default function AssistedPrinting() {
             artist&apos;s needs.
           </p>
 
-          <Link to="/contact" className="btn service-page__cta--wide">
+          <Link to="/contact" className="btn service-page__cta--wide service-page__cta--contact">
             Get in Touch
           </Link>
 
