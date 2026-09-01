@@ -32,7 +32,7 @@
 
 .home-contact__email {
   border-radius: 999px;
-  padding: 0.6rem 1.25rem;
+  padding: 0.7rem 1.25rem;
   color: #8b6510;
   border-color: #8b6510;
   margin-bottom: 1.5rem;
@@ -149,6 +149,10 @@
   margin: 0 auto 1.5rem;
 }
 
+.home-contact__map-wrap--mobile {
+  display: none;
+}
+
 .home-contact__map {
   display: block;
   position: relative;
@@ -214,6 +218,7 @@
 @media (max-width: 900px) {
   .home-contact__row {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .home-contact__col,
@@ -227,16 +232,20 @@
 
   .home-contact__title {
     order: 1;
+    margin-bottom: 0.4rem;
   }
 
   .home-contact__lead {
     order: 2;
+    margin-bottom: 0.4rem;
   }
 
   .home-contact__email {
     order: 3;
     display: flex;
     width: 100%;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
     text-align: center;
   }
 
@@ -249,17 +258,28 @@
   }
 
   .home-contact__map-wrap {
-    order: 6;
     margin-left: 0;
+  }
+
+  .home-contact__map-wrap--desktop {
+    display: none;
+  }
+
+  .home-contact__map-wrap--mobile {
+    order: 6;
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
 
   .home-contact__address {
     order: 7;
+    margin-bottom: 0.3rem;
   }
 
   .home-contact__directions {
     order: 8;
-    margin-left: 0;
+    margin: 0 auto 0.5rem;
   }
 
   .home-contact__map-btn {
@@ -272,23 +292,28 @@
     order: 10;
     width: 100%;
     margin-top: 2rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   .home-contact__socials {
     order: 11;
     width: 100%;
-    justify-content: space-between;
-    gap: 0;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .home-contact__social {
+    font-size: 1.05rem;
   }
 
   .home-contact__social-icon {
-    width: 72px;
-    height: 72px;
+    width: 88px;
+    height: 88px;
   }
 
   .home-contact__map-col {
-    text-align: left;
+    text-align: center;
   }
 
   .home-contact__phone-link {

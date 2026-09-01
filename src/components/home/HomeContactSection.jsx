@@ -12,6 +12,17 @@ const PHONES = [
   { number: '+27 12 803 2369', name: 'Rina Stutzer', role: 'Artist' },
 ]
 
+function MapCircle({ className = '' }) {
+  return (
+    <div className={`home-contact__map-wrap ${className}`.trim()}>
+      <span className="home-contact__map" aria-disabled="true">
+        <img className="home-contact__map-img home-contact__map-img--default" src={location1} alt="Map to Curious Little Press" />
+        <img className="home-contact__map-img home-contact__map-img--hover" src={location2} alt="" aria-hidden="true" />
+      </span>
+    </div>
+  )
+}
+
 export default function HomeContactSection() {
   return (
     <section className="home-contact" id="contact">
@@ -71,15 +82,12 @@ export default function HomeContactSection() {
           </div>
         </div>
 
+        <MapCircle className="home-contact__map-wrap--mobile" />
+
         <div className="home-contact__divider" aria-hidden="true" />
 
         <div className="home-contact__col home-contact__map-col">
-          <div className="home-contact__map-wrap">
-            <span className="home-contact__map" aria-disabled="true">
-              <img className="home-contact__map-img home-contact__map-img--default" src={location1} alt="Map to Curious Little Press" />
-              <img className="home-contact__map-img home-contact__map-img--hover" src={location2} alt="" aria-hidden="true" />
-            </span>
-          </div>
+          <MapCircle className="home-contact__map-wrap--desktop" />
 
           <p className="home-contact__address">
             219 Vonkrprop road, Samcor Park,
