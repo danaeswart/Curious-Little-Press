@@ -32,7 +32,7 @@ export default function AboutIntro() {
             intaglio, monotype and screen printing.
           </p>
 
-          <a href="/services" className="btn about-intro__btn about-intro__btn--services">
+          <a href="/#studio" className="btn about-intro__btn about-intro__btn--services">
             View our Services
           </a>
         </Reveal>
@@ -74,26 +74,22 @@ export default function AboutIntro() {
           <h3 className="about-intro__flight-title">Follow Our Flight</h3>
 
           <div className="about-intro__socials">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
+            <span
               aria-label="Instagram"
+              aria-disabled="true"
               className="about-intro__social"
             >
               <img src={instagramIcon} alt="" />
               <span>Instagram</span>
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noreferrer"
+            </span>
+            <span
               aria-label="Facebook"
+              aria-disabled="true"
               className="about-intro__social"
             >
               <img src={facebookIcon} alt="" />
               <span>Facebook</span>
-            </a>
+            </span>
           </div>
         </Reveal>
       </div>

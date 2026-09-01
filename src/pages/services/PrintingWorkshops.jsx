@@ -9,12 +9,12 @@ export default function PrintingWorkshops() {
     <article className="service-page">
       <div className="container service-page__grid">
         <Reveal as="div" className="service-page__col">
-          <Link to="/services" className="btn service-page__back">
+          <a href="/#studio" className="btn service-page__back">
             <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
               <path d="M13 8H3M7 4 3 8l4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Back to Services
-          </Link>
+          </a>
 
           <h1 className="service-page__title">Printing Workshops</h1>
 
@@ -39,9 +39,9 @@ export default function PrintingWorkshops() {
 
           <p>Upcoming workshops will be communicated via our social media channels</p>
 
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="btn">
+          <span className="btn" aria-disabled="true">
             Visit our Instagram
-          </a>
+          </span>
 
           <img
             className="service-page__img service-page__img--tall"

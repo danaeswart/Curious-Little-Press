@@ -6,6 +6,10 @@
   background: var(--color-bg);
 }
 
+.how-to-use .container {
+  scroll-margin-top: var(--header-h);
+}
+
 .how-to-use__title {
   font-size: clamp(2.5rem, 5.5vw, 4rem);
   margin-bottom: clamp(2.5rem, 6vw, 4rem);
@@ -20,7 +24,7 @@
 .how-to-use__cta {
   display: flex;
   justify-content: center;
-  margin-top: clamp(2.5rem, 6vw, 4rem);
+  margin-top: clamp(1.25rem, 3vw, 2rem);
 }
 
 .how-to-use__cta .btn {
@@ -45,5 +49,9 @@
   .how-to-use__grid {
     max-width: 360px;
     margin-inline: auto;
+  }
+
+  .how-to-use__cta .btn {
+    width: 100%;
   }
 }

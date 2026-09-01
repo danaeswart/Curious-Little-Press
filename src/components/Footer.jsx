@@ -40,6 +40,7 @@ export default function Footer() {
                 <NavLink
                   to={link.to}
                   end={link.to === '/'}
+                  data-label={link.label}
                   className={({ isActive }) => (isActive ? 'is-active' : '')}
                 >
                   {link.label}
@@ -51,18 +52,18 @@ export default function Footer() {
 
         <div className="site-footer__contact">
           <p className="site-footer__label">For enquiries email us at:</p>
-          <a className="btn btn--pill" href="mailto:studio@curiouslittlepress.com">
+          <span className="btn btn--pill" aria-disabled="true">
             studio@curiouslittlepress.com
-          </a>
+          </span>
           <p className="site-footer__label site-footer__label--spaced">Or call us on:</p>
-          <a className="site-footer__phone" href="tel:+27794479310">
+          <span className="site-footer__phone" aria-disabled="true">
             <img src={phoneIcon} alt="" aria-hidden="true" className="site-footer__phone-icon" />
             <div className="site-footer__phone-content">
               <span className="site-footer__phone-number">+27 79 447 9310</span>
               <div className="site-footer__phone-divider" aria-hidden="true" />
               <span className="site-footer__phone-name">Marlene Salisbury</span>
             </div>
-          </a>
+          </span>
         </div>
       </div>
 

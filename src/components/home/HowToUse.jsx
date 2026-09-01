@@ -8,8 +8,8 @@ const BASE_DELAY = 150
 
 export default function HowToUse() {
   return (
-    <section className="how-to-use" id="studio">
-      <div className="container">
+    <section className="how-to-use">
+      <div className="container" id="studio">
         <Reveal as="div" delay={BASE_DELAY}>
           <h2 className="how-to-use__title">
             How To Use
@@ -31,7 +31,13 @@ export default function HowToUse() {
           ))}
         </div>
 
-        <Reveal as="div" delay={BASE_DELAY + SERVICES.length * 120 + 100} className="how-to-use__cta">
+        <Reveal
+          as="div"
+          delay={BASE_DELAY + SERVICES.length * 120 + 100}
+          className="how-to-use__cta"
+          rootMargin="0px 0px 15% 0px"
+          mobileRootMargin="0px 0px 25% 0px"
+        >
           <Link to="/gallery" className="btn">
             View our Gallery
           </Link>

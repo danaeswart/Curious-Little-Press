@@ -102,4 +102,9 @@
   .about-intro__row--reverse .about-intro__media {
     order: 0;
   }
+
+  .about-intro__btn {
+    display: flex;
+    width: 100%;
+  }
 }

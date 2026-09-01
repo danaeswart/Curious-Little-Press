@@ -26,16 +26,16 @@ export default function HomeContactSection() {
             For enquiries, bookings, or more information, email us at:
           </p>
 
-          <a href="mailto:studio@curiouslittlepress.com" className="btn home-contact__email">
+          <span className="btn home-contact__email" aria-disabled="true">
             studio@curiouslittlepress.com
-          </a>
+          </span>
 
           <p className="home-contact__label">Or call us on:</p>
 
           <ul className="home-contact__phones">
             {PHONES.map((phone) => (
               <li key={phone.number + phone.name}>
-                <a href={`tel:${phone.number.replace(/\s/g, '')}`} className="home-contact__phone-link">
+                <span className="home-contact__phone-link" aria-disabled="true">
                   <img src={phoneIcon} alt="" className="home-contact__phone-icon" />
                   <div className="home-contact__phone-content">
                     <span className="home-contact__phone-number">{phone.number}</span>
@@ -45,33 +45,29 @@ export default function HomeContactSection() {
                       <span>{phone.role}</span>
                     </div>
                   </div>
-                </a>
+                </span>
               </li>
             ))}
           </ul>
 
           <p className="home-contact__label home-contact__label--flight">Follow our flight</p>
           <div className="home-contact__socials">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
+            <span
               aria-label="Instagram"
+              aria-disabled="true"
               className="home-contact__social"
             >
               <img src={instagramIcon} alt="" className="home-contact__social-icon" />
               <span>Instagram</span>
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noreferrer"
+            </span>
+            <span
               aria-label="Facebook"
+              aria-disabled="true"
               className="home-contact__social"
             >
               <img src={facebookIcon} alt="" className="home-contact__social-icon" />
               <span>Facebook</span>
-            </a>
+            </span>
           </div>
         </div>
 
@@ -79,10 +75,10 @@ export default function HomeContactSection() {
 
         <div className="home-contact__col home-contact__map-col">
           <div className="home-contact__map-wrap">
-            <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="home-contact__map">
+            <span className="home-contact__map" aria-disabled="true">
               <img className="home-contact__map-img home-contact__map-img--default" src={location1} alt="Map to Curious Little Press" />
               <img className="home-contact__map-img home-contact__map-img--hover" src={location2} alt="" aria-hidden="true" />
-            </a>
+            </span>
           </div>
 
           <p className="home-contact__address">
@@ -95,14 +91,12 @@ export default function HomeContactSection() {
             building and turn right, to the French door studios to the right and front of
             the building, look out for the CLP sign above the printing studio door.
           </p>
-          <a
-            href="https://maps.google.com"
-            target="_blank"
-            rel="noreferrer"
+          <span
             className="btn home-contact__map-btn"
+            aria-disabled="true"
           >
             View on Google Maps
-          </a>
+          </span>
         </div>
       </Reveal>
     </section>

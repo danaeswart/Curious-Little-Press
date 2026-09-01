@@ -67,6 +67,10 @@ a {
   text-decoration: none;
 }
 
+[aria-disabled='true'] {
+  cursor: default;
+}
+
 button {
   font-family: inherit;
   cursor: pointer;

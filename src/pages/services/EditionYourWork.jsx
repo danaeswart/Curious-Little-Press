@@ -9,12 +9,12 @@ export default function EditionYourWork() {
     <article className="service-page">
       <div className="container service-page__grid">
         <Reveal as="div" className="service-page__col">
-          <Link to="/services" className="btn service-page__back">
+          <a href="/#studio" className="btn service-page__back">
             <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
               <path d="M13 8H3M7 4 3 8l4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Back to Services
-          </Link>
+          </a>
 
           <h1 className="service-page__title">Professional Printing on Behalf of the Artist</h1>
 
@@ -77,9 +77,9 @@ export default function EditionYourWork() {
             </p>
           </div>
 
-          <Link to="/services" className="btn service-page__cta--wide">
+          <a href="/#studio" className="btn service-page__cta--wide">
             View more Services
-          </Link>
+          </a>
         </Reveal>
       </div>
     </article>

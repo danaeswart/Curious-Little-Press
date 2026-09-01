@@ -92,11 +92,14 @@
     gap: 1rem;
   }
 
-  .press-gallery__cta .btn,
-  .press-gallery__cta .link-arrow {
+  .press-gallery__cta .btn {
     width: 100%;
     justify-content: center;
     text-align: center;
+  }
+
+  .press-gallery__cta .link-arrow {
+    align-self: center;
   }
 }
 

@@ -165,7 +165,7 @@
     order: 7;
   }
 
-  .service-page--guidance a[href="/services"].service-page__cta--wide {
+  .service-page--guidance a[href="/#studio"].service-page__cta--wide {
     order: 8;
   }
 }
