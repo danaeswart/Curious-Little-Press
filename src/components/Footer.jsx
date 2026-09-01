@@ -50,7 +50,7 @@ export default function Footer() {
         </nav>
 
         <div className="site-footer__contact">
-          <p className="site-footer__label">For enquiries, bookings, or more information, email us at:</p>
+          <p className="site-footer__label">For enquiries email us at:</p>
           <a className="btn btn--pill" href="mailto:studio@curiouslittlepress.com">
             studio@curiouslittlepress.com
           </a>

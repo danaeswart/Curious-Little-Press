@@ -119,4 +119,53 @@
   .service-page__grid {
     grid-template-columns: 1fr;
   }
+
+  /* Independent Studio Rental / Assisted Printing share this layout: on
+     mobile the mockup wants back button -> title -> image -> copy -> CTA ->
+     image -> facts -> CTA, which doesn't match the desktop col1/col2 DOM
+     order. Flatten the column wrappers so their children join the grid
+     directly, then re-sequence with `order`. */
+  .service-page--guidance .service-page__col,
+  .service-page--guidance .service-page__img-wrap {
+    display: contents;
+  }
+
+  .service-page--guidance .service-page__img-wrap .service-page__back--overlay {
+    position: static;
+    top: auto;
+    left: auto;
+    z-index: auto;
+  }
+
+  .service-page--guidance .service-page__back--overlay {
+    order: 1;
+  }
+
+  .service-page--guidance .service-page__title {
+    order: 2;
+  }
+
+  .service-page--guidance .service-page__img--tall {
+    order: 3;
+  }
+
+  .service-page--guidance .service-page__col > p {
+    order: 4;
+  }
+
+  .service-page--guidance a[href="/contact"].service-page__cta--wide {
+    order: 5;
+  }
+
+  .service-page--guidance .service-page__img--wide.service-page__img--push-down {
+    order: 6;
+  }
+
+  .service-page--guidance .service-page__facts {
+    order: 7;
+  }
+
+  .service-page--guidance a[href="/services"].service-page__cta--wide {
+    order: 8;
+  }
 }

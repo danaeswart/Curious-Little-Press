@@ -11,7 +11,7 @@
 
   --font-display: 'Erica Type', 'Courier New', ui-monospace, monospace;
   --font-body: 'Poppins', system-ui, sans-serif;
-  --font-script: 'Dancing Script', 'Parisienne', 'Nautilus Pompilius', cursive;
+  --font-script: 'Dancing Script', cursive;
 
   --gutter: clamp(1.25rem, 4vw, 4rem);
   --header-h: 93px;
