@@ -59,9 +59,9 @@ export default function Footer() {
           <span className="site-footer__phone" aria-disabled="true">
             <img src={phoneIcon} alt="" aria-hidden="true" className="site-footer__phone-icon" />
             <div className="site-footer__phone-content">
-              <span className="site-footer__phone-number">+27 79 447 9310</span>
+              <span className="site-footer__phone-number">+27 12 803 2369</span>
               <div className="site-footer__phone-divider" aria-hidden="true" />
-              <span className="site-footer__phone-name">Marlene Salisbury</span>
+              <span className="site-footer__phone-name">Landline</span>
             </div>
           </span>
         </div>

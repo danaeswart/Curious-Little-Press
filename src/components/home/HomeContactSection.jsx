@@ -1,23 +1,22 @@
 import Reveal from '../Reveal'
 import location1 from '../../assets/home/location1.png'
-import location2 from '../../assets/home/location2.png'
 import instagramIcon from '../../assets/icons/instagram.png'
 import facebookIcon from '../../assets/icons/facebook.png'
 import phoneIcon from '../../assets/icons/phone.png'
 import './HomeContactSection.css'
 
 const PHONES = [
-  { number: '+27 12 803 2369', name: 'Marlene Salisbury', role: 'Liaison Officer' },
-  { number: '+27 79 447 9310', name: 'Barry van der Westhuizen', role: 'Printer' },
-  { number: '+27 12 803 2369', name: 'Rina Stutzer', role: 'Artist' },
+  { number: '+27 79 447 9310', name: 'Marlene Salisbury', role: 'CLP Liaison Officer' },
+  { number: '+27 12 803 2369', name: 'Landline' },
+  { number: '+27 72 699 8090', name: 'Barry van der Westhuizen', role: 'Printmaker' },
+  { number: '+27 72 249 3931', name: 'Rina Stutzer', role: 'CLP Co-ordinator, Founder and Artist' },
 ]
 
 function MapCircle({ className = '' }) {
   return (
     <div className={`home-contact__map-wrap ${className}`.trim()}>
       <span className="home-contact__map" aria-disabled="true">
-        <img className="home-contact__map-img home-contact__map-img--default" src={location1} alt="Map to Curious Little Press" />
-        <img className="home-contact__map-img home-contact__map-img--hover" src={location2} alt="" aria-hidden="true" />
+        <img className="home-contact__map-img" src={location1} alt="Map to Curious Little Press" />
       </span>
     </div>
   )
@@ -34,7 +33,7 @@ export default function HomeContactSection() {
             Hear From You
           </h2>
           <p className="home-contact__lead">
-            For enquiries, bookings, or more information, email us at:
+            For enquiries, bookings, rates and more information, email us at:
           </p>
 
           <span className="btn home-contact__email" aria-disabled="true">
@@ -53,7 +52,7 @@ export default function HomeContactSection() {
                     <div className="home-contact__phone-divider" aria-hidden="true" />
                     <div className="home-contact__phone-meta">
                       <span>{phone.name}</span>
-                      <span>{phone.role}</span>
+                      {phone.role && <span>{phone.role}</span>}
                     </div>
                   </div>
                 </span>

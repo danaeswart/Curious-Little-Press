@@ -42,8 +42,8 @@
 .service-page__img-wrap > .btn {
   align-self: flex-start;
   width: auto;
-  padding: 0.7rem 1.75rem;
-  font-size: 1rem;
+  padding: 0.55rem 1.9rem;
+  font-size: clamp(0.8rem, 1.1vw, 0.9rem);
   font-weight: 400;
   color: #8b6510;
   border-color: #8b6510;
@@ -51,14 +51,10 @@
   transition: box-shadow 0.3s var(--ease-out);
 }
 
-.service-page__col > .btn.service-page__cta--wide {
-  padding-inline: 2.6rem;
-}
-
 .service-page__col > .btn.service-page__back,
 .service-page__img-wrap > .btn.service-page__back {
-  padding: 0.6rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.45rem 1.5rem;
+  font-size: 0.85rem;
 }
 
 .service-page__img-wrap {

@@ -8,6 +8,7 @@ export default function Hero() {
     <section className="hero">
       <Reveal as="div" className="container hero__row">
         <div className="hero__copy">
+          <p className="hero__subtitle">Visits by appointment only</p>
           <h1 className="hero__title">
             <span className="hero__title-line">Curious</span>
             <span className="hero__title-line">Little</span>
@@ -18,7 +19,7 @@ export default function Hero() {
             Curious Little Press is an open printmaking studio in Pretoria offering
             professional facilities, workshops, and collaborative opportunities.
           </p>
-
+          
           <div className="hero__actions hero__actions--desktop">
             <Link to="/contact" className="btn">
               Get in Touch

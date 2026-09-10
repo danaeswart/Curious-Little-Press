@@ -7,6 +7,7 @@
   text-align: center;
   text-transform: none;
   margin-bottom: clamp(2rem, 4.5vw, 3rem);
+  color: #8b6510;
 }
 
 .flight-path__body {

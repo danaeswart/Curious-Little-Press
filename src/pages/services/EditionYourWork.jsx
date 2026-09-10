@@ -72,8 +72,8 @@ export default function EditionYourWork() {
             <p>
               The studio accommodates both small-scale and larger-format print projects across
               various printmaking techniques. Suggested etching plate or matrix size is 120 × 80
-              cm, the silkscreen size limit is 120 × 85 cm, and the largest lithography stone
-              available measures 60 × 70 cm.
+              cm, the silkscreen size limit is 60 × 60 cm maximum, and the largest lithography
+              stone available measures 60 × 50 cm.
             </p>
           </div>
 

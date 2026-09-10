@@ -32,11 +32,11 @@
 
 .home-contact__email {
   border-radius: 999px;
-  padding: 0.7rem 1.25rem;
+  padding: 0.55rem 1rem;
   color: #8b6510;
   border-color: #8b6510;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.82rem;
   box-shadow: 0 0 0 0 transparent;
   transition: box-shadow 0.3s var(--ease-out);
 }
@@ -57,7 +57,7 @@
 }
 
 .home-contact__label--flight {
-  margin-top: 0.4rem;
+  margin-top: 0.1rem;
   font-size: 0.95rem;
 }
 
@@ -65,7 +65,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.85rem;
 }
 
 .home-contact__phone-link {
@@ -98,13 +98,14 @@
   font-weight: 700;
   font-size: 1.05rem;
   color: #8b6510;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.15rem;
 }
 
 .home-contact__phone-divider {
   height: 1px;
   background: var(--color-border);
-  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 
 .home-contact__phone-meta {
@@ -159,6 +160,11 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.home-contact__map:hover {
+  transform: translateY(-4px);
 }
 
 .home-contact__map-img {
@@ -167,19 +173,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.45s var(--ease-out);
-}
-
-.home-contact__map-img--hover {
-  opacity: 0;
-}
-
-.home-contact__map:hover .home-contact__map-img--default {
-  opacity: 0;
-}
-
-.home-contact__map:hover .home-contact__map-img--hover {
-  opacity: 1;
 }
 
 .home-contact__address {
@@ -198,8 +191,8 @@
 }
 
 .home-contact__map-btn {
-  font-size: 0.9rem;
-  padding-inline: 1.5rem;
+  font-size: 0.82rem;
+  padding: 0.55rem 1.15rem;
   font-weight: 400;
   color: #8b6510;
   border-color: #8b6510;

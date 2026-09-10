@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Reveal from '../Reveal'
-import cplImg from '../../assets/home/wiCPL.JPG'
+import cplImg from '../../assets/home/wiCPL.png'
 import './AboutClp.css'
 
 const POINTS = [

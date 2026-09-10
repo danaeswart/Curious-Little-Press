@@ -1,5 +1,4 @@
 import service1 from '../assets/home/service1.JPG'
-import service1Hover from '../assets/home/service1.2.png'
 import service2 from '../assets/home/service2.JPG'
 import service3 from '../assets/home/service3.png'
 import service4 from '../assets/home/service4.JPG'
@@ -12,7 +11,6 @@ export const SERVICES = [
     detail:
       'CLP hosts workshops, demonstrations and collaborative group sessions focused on traditional handmade printmaking practices, from introductory technical sessions to more experimental, process-based engagements.',
     image: service1,
-    hoverImage: service1Hover,
   },
   {
     slug: 'work-with-guidance',

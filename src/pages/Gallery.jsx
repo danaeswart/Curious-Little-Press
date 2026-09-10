@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import PageIntro from '../components/PageIntro'
+import { getPressInfo } from '../data/press'
 import './Gallery.css'
 
 // Pulls every image out of src/assets/press automatically, so dropping a new
@@ -28,7 +29,7 @@ function buildGallery() {
   const items = Object.entries(modules)
     .map(([path, src]) => {
       const filename = path.split('/').pop()
-      return { src, filename, caption: toCaption(filename) }
+      return { src, filename, caption: toCaption(filename), info: getPressInfo(filename) }
     })
     .sort((a, b) => a.filename.localeCompare(b.filename))
 
@@ -102,9 +103,115 @@ function useMasonryLayout(gridRef, itemCount) {
   }, [gridRef, itemCount])
 }
 
+function PressLightbox({ item, onClose, onPrev, onNext }) {
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') onClose()
+      if (event.key === 'ArrowLeft') onPrev()
+      if (event.key === 'ArrowRight') onNext()
+    }
+    document.addEventListener('keydown', onKeyDown)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [onClose, onPrev, onNext])
+
+  const { info } = item
+
+  return (
+    <div className="press-lightbox" role="dialog" aria-modal="true" onClick={onClose}>
+      <button
+        type="button"
+        className="press-lightbox__close"
+        aria-label="Close"
+        onClick={onClose}
+      >
+        <svg viewBox="0 0 16 16" width="18" height="18" fill="none">
+          <path
+            d="M3 3l10 10M13 3L3 13"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+          />
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        className="press-lightbox__nav press-lightbox__nav--prev"
+        aria-label="Previous image"
+        onClick={(event) => {
+          event.stopPropagation()
+          onPrev()
+        }}
+      >
+        <svg viewBox="0 0 16 16" width="20" height="20" fill="none">
+          <path
+            d="M10 3L4 8l6 5"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      <div className="press-lightbox__panel" onClick={(event) => event.stopPropagation()}>
+        <div className="press-lightbox__image">
+          <img src={item.src} alt={info ? `${info.title} by ${info.artist}` : item.caption} />
+        </div>
+        <div className="press-lightbox__info">
+          {info ? (
+            <>
+              <h2 className="press-lightbox__title">{info.title}</h2>
+              <p className="press-lightbox__artist">{info.artist}</p>
+              <p className="press-lightbox__meta">
+                {info.year} &middot; {info.medium}
+              </p>
+              <p className="press-lightbox__desc">{info.description}</p>
+            </>
+          ) : (
+            <h2 className="press-lightbox__title press-lightbox__title--caption">
+              {item.caption}
+            </h2>
+          )}
+        </div>
+      </div>
+
+      <button
+        type="button"
+        className="press-lightbox__nav press-lightbox__nav--next"
+        aria-label="Next image"
+        onClick={(event) => {
+          event.stopPropagation()
+          onNext()
+        }}
+      >
+        <svg viewBox="0 0 16 16" width="20" height="20" fill="none">
+          <path
+            d="M6 3l6 5-6 5"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+  )
+}
+
 export default function Gallery() {
   const gridRef = useRef(null)
   useMasonryLayout(gridRef, GALLERY_ITEMS.length)
+  const [activeIndex, setActiveIndex] = useState(null)
+
+  const closeLightbox = () => setActiveIndex(null)
+  const showPrev = () =>
+    setActiveIndex((current) => (current - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length)
+  const showNext = () => setActiveIndex((current) => (current + 1) % GALLERY_ITEMS.length)
 
   return (
     <>
@@ -121,13 +228,20 @@ export default function Gallery() {
               const isEager = index < EAGER_COUNT
               return (
                 <figure className="press-gallery__item" key={item.filename}>
-                  <img
-                    src={item.src}
-                    alt={item.caption}
-                    loading={isEager ? 'eager' : 'lazy'}
-                    fetchPriority={isEager ? 'high' : 'auto'}
-                    decoding="async"
-                  />
+                  <button
+                    type="button"
+                    className="press-gallery__trigger"
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`View ${item.info ? item.info.title : item.caption} enlarged`}
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.caption}
+                      loading={isEager ? 'eager' : 'lazy'}
+                      fetchPriority={isEager ? 'high' : 'auto'}
+                      decoding="async"
+                    />
+                  </button>
                 </figure>
               )
             })}
@@ -152,6 +266,15 @@ export default function Gallery() {
           </Link>
         </Reveal>
       </section>
+
+      {activeIndex !== null && (
+        <PressLightbox
+          item={GALLERY_ITEMS[activeIndex]}
+          onClose={closeLightbox}
+          onPrev={showPrev}
+          onNext={showNext}
+        />
+      )}
     </>
   )
 }
