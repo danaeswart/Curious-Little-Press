@@ -20,6 +20,11 @@
   padding-top: 0.4rem;
 }
 
+.service-page--workshops,
+.service-page--edition {
+  padding-top: clamp(0.75rem, 2vw, 1.5rem);
+}
+
 .service-page__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -77,22 +77,26 @@ export default function AboutIntro() {
           <h3 className="about-intro__flight-title">Follow Our Flight</h3>
 
           <div className="about-intro__socials">
-            <span
+            <a
+              href="https://www.instagram.com/curiouslittlepress"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
-              aria-disabled="true"
               className="about-intro__social"
             >
               <img src={instagramIcon} alt="" />
               <span>Instagram</span>
-            </span>
-            <span
+            </a>
+            <a
+              href="https://www.facebook.com/CuriousLittlePressStudios"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
-              aria-disabled="true"
               className="about-intro__social"
             >
               <img src={facebookIcon} alt="" />
               <span>Facebook</span>
-            </span>
+            </a>
           </div>
         </Reveal>
       </div>

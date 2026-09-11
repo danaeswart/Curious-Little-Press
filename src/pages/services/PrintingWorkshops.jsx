@@ -39,9 +39,14 @@ export default function PrintingWorkshops() {
 
           <p>Upcoming workshops will be communicated via our social media channels</p>
 
-          <span className="btn" aria-disabled="true">
+          <a
+            href="https://www.instagram.com/curiouslittlepress"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn"
+          >
             Visit our Instagram
-          </span>
+          </a>
 
           <img
             className="service-page__img service-page__img--tall"

@@ -15,9 +15,14 @@ const PHONES = [
 function MapCircle({ className = '' }) {
   return (
     <div className={`home-contact__map-wrap ${className}`.trim()}>
-      <span className="home-contact__map" aria-disabled="true">
+      <a
+        href="https://www.google.com/maps/place/219+Vonkprop+Rd,+Samcor+Park,+Pretoria,+0002/@-25.73551,28.3293274,17z/data=!3m1!4b1!4m6!3m5!1s0x1e955fbaf46df325:0x97604a1c047bad08!8m2!3d-25.73551!4d28.3319023!16s%2Fg%2F11jn1nfx9g"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="home-contact__map"
+      >
         <img className="home-contact__map-img" src={location1} alt="Map to Curious Little Press" />
-      </span>
+      </a>
     </div>
   )
 }
@@ -45,7 +50,7 @@ export default function HomeContactSection() {
           <ul className="home-contact__phones">
             {PHONES.map((phone) => (
               <li key={phone.number + phone.name}>
-                <span className="home-contact__phone-link" aria-disabled="true">
+                <a href={`tel:${phone.number.replace(/\s+/g, '')}`} className="home-contact__phone-link">
                   <img src={phoneIcon} alt="" className="home-contact__phone-icon" />
                   <div className="home-contact__phone-content">
                     <span className="home-contact__phone-number">{phone.number}</span>
@@ -55,29 +60,33 @@ export default function HomeContactSection() {
                       {phone.role && <span>{phone.role}</span>}
                     </div>
                   </div>
-                </span>
+                </a>
               </li>
             ))}
           </ul>
 
           <p className="home-contact__label home-contact__label--flight">Follow our flight</p>
           <div className="home-contact__socials">
-            <span
+            <a
+              href="https://www.instagram.com/curiouslittlepress"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
-              aria-disabled="true"
               className="home-contact__social"
             >
               <img src={instagramIcon} alt="" className="home-contact__social-icon" />
               <span>Instagram</span>
-            </span>
-            <span
+            </a>
+            <a
+              href="https://www.facebook.com/CuriousLittlePressStudios"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
-              aria-disabled="true"
               className="home-contact__social"
             >
               <img src={facebookIcon} alt="" className="home-contact__social-icon" />
               <span>Facebook</span>
-            </span>
+            </a>
           </div>
         </div>
 
@@ -98,12 +107,14 @@ export default function HomeContactSection() {
             building and turn right, to the French door studios to the right and front of
             the building, look out for the CLP sign above the printing studio door.
           </p>
-          <span
+          <a
+            href="https://www.google.com/maps/place/219+Vonkprop+Rd,+Samcor+Park,+Pretoria,+0002/@-25.73551,28.3293274,17z/data=!3m1!4b1!4m6!3m5!1s0x1e955fbaf46df325:0x97604a1c047bad08!8m2!3d-25.73551!4d28.3319023!16s%2Fg%2F11jn1nfx9g"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn home-contact__map-btn"
-            aria-disabled="true"
           >
             View on Google Maps
-          </span>
+          </a>
         </div>
       </Reveal>
     </section>
