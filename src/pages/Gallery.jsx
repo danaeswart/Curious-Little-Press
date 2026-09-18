@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import PageIntro from '../components/PageIntro'
-import { getPressInfo } from '../data/press'
+import { parsePressFilename } from '../data/press'
 import './Gallery.css'
 
 // Pulls every image out of src/assets/press automatically, so dropping a new
@@ -29,7 +29,7 @@ function buildGallery() {
   const items = Object.entries(modules)
     .map(([path, src]) => {
       const filename = path.split('/').pop()
-      return { src, filename, caption: toCaption(filename), info: getPressInfo(filename) }
+      return { src, filename, caption: toCaption(filename), info: parsePressFilename(filename) }
     })
     .sort((a, b) => a.filename.localeCompare(b.filename))
 
@@ -167,10 +167,11 @@ function PressLightbox({ item, onClose, onPrev, onNext }) {
             <>
               <h2 className="press-lightbox__title">{info.title}</h2>
               <p className="press-lightbox__artist">{info.artist}</p>
-              <p className="press-lightbox__meta">
-                {info.year} &middot; {info.medium}
-              </p>
-              <p className="press-lightbox__desc">{info.description}</p>
+              {(info.size || info.medium) && (
+                <p className="press-lightbox__meta">
+                  {[info.size, info.medium].filter(Boolean).join(' · ')}
+                </p>
+              )}
             </>
           ) : (
             <h2 className="press-lightbox__title press-lightbox__title--caption">
