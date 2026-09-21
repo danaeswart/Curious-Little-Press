@@ -24,6 +24,7 @@ export default function AboutClp() {
             src={cplImg}
             alt="Curious Little Press studio entrance with hanging shop sign"
           />
+          <span className="about-clp__credit">Photography by Alet Pretorius</span>
         </div>
 
         <div className="about-clp__content">

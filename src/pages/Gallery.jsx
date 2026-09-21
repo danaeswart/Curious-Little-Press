@@ -167,11 +167,11 @@ function PressLightbox({ item, onClose, onPrev, onNext }) {
             <>
               <h2 className="press-lightbox__title">{info.title}</h2>
               <p className="press-lightbox__artist">{info.artist}</p>
-              {(info.size || info.medium) && (
-                <p className="press-lightbox__meta">
-                  {[info.size, info.medium].filter(Boolean).join(' · ')}
-                </p>
-              )}
+              <div className="press-lightbox__meta-list">
+                {info.year && <p className="press-lightbox__meta">{info.year}</p>}
+                {info.medium && <p className="press-lightbox__meta">{info.medium}</p>}
+                {info.size && <p className="press-lightbox__meta">{info.size}</p>}
+              </div>
             </>
           ) : (
             <h2 className="press-lightbox__title press-lightbox__title--caption">

@@ -60,6 +60,10 @@
   flex-wrap: wrap;
 }
 
+.hero__actions--desktop {
+  margin-left: -0.5rem;
+}
+
 .hero__actions .link-arrow {
   font-size: clamp(0.9rem, 1.25vw, 1rem);
 }
