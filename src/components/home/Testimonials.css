@@ -113,4 +113,16 @@
     max-width: 420px;
     margin-inline: auto;
   }
+
+  /* Keep every piece of text in this section at 16px or above on mobile.
+     Scoped under .testimonials so this reliably beats the global .eyebrow
+     and .link-arrow font-sizes regardless of stylesheet import order. */
+  .testimonials .eyebrow,
+  .testimonials .testimonial-card__excerpt,
+  .testimonials .testimonial-card__full-para,
+  .testimonials .testimonial-card__toggle,
+  .testimonials .testimonial-card__name,
+  .testimonials .testimonial-card__meta {
+    font-size: 1rem;
+  }
 }

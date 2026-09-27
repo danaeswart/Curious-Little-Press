@@ -312,4 +312,13 @@
   .home-contact__phone-link {
     max-width: 100%;
   }
+
+  .home-contact__phone-meta {
+    flex-direction: column;
+    gap: 0.05rem;
+  }
+
+  .home-contact__phone-role {
+    color: var(--color-ink-soft);
+  }
 }

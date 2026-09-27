@@ -80,7 +80,7 @@ function TestimonialCard({ item, delay }) {
           <span className="testimonial-card__name">{item.name}</span>
           <span className="testimonial-card__meta">
             {item.role}
-            {item.date ? ` — ${item.date}` : ''}
+            {item.date ? ` · ${item.date}` : ''}
           </span>
         </footer>
       </article>

@@ -56,8 +56,10 @@ export default function HomeContactSection() {
                     <span className="home-contact__phone-number">{phone.number}</span>
                     <div className="home-contact__phone-divider" aria-hidden="true" />
                     <div className="home-contact__phone-meta">
-                      <span>{phone.name}</span>
-                      {phone.role && <span>{phone.role}</span>}
+                      <span className="home-contact__phone-name">{phone.name}</span>
+                      {phone.role && (
+                        <span className="home-contact__phone-role">{phone.role}</span>
+                      )}
                     </div>
                   </div>
                 </a>

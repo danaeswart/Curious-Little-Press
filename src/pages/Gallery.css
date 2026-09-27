@@ -111,7 +111,10 @@
 
 .press-lightbox__title {
   font-family: var(--font-display);
+  font-style: normal;
   text-transform: none;
+  font-weight: 400;
+  letter-spacing: -0.03em;
   font-size: clamp(1.3rem, 2.2vw, 1.7rem);
   margin: 0 0 0.5rem;
   color: var(--color-ink);
