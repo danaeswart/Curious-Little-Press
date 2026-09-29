@@ -5,7 +5,7 @@ import './AboutHeader.css'
 export default function AboutHeader() {
   return (
     <section className="about-header">
-      <img className="about-header__img" src={headerImg} alt="Curious Little Press studio interior with printing presses" />
+      <img className="about-header__img" src={headerImg} alt="Curious Little Press printmaking studio in Pretoria, with lithography and etching presses" />
       <div className="about-header__overlay" aria-hidden="true" />
       <Reveal as="div" variant="fade" className="about-header__content">
         <h1 className="about-header__title">

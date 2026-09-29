@@ -2,16 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import PageIntro from '../components/PageIntro'
-import { getPressInfo } from '../data/press'
+import { parsePressFilename } from '../data/press'
+import { PRESS_MODULES as modules, thumbFor } from '../data/pressImages'
 import './Gallery.css'
-
-// Pulls every image out of src/assets/press automatically, so dropping a new
-// file into that folder is enough to have it show up here — no manual list
-// to keep in sync (and no risk of a typo'd filename breaking the build).
-const modules = import.meta.glob('../assets/press/*.{jpg,jpeg,png}', {
-  eager: true,
-  import: 'default',
-})
+import usePageMeta from '../hooks/usePageMeta'
 
 const PROCESS_HINTS = ['workshop', 'studio', 'swatches', 'demonstration', 'detail']
 
@@ -29,7 +23,13 @@ function buildGallery() {
   const items = Object.entries(modules)
     .map(([path, src]) => {
       const filename = path.split('/').pop()
-      return { src, filename, caption: toCaption(filename), info: getPressInfo(filename) }
+      return {
+        src,
+        thumb: thumbFor(filename) ?? src,
+        filename,
+        caption: toCaption(filename),
+        info: parsePressFilename(filename),
+      }
     })
     .sort((a, b) => a.filename.localeCompare(b.filename))
 
@@ -167,10 +167,11 @@ function PressLightbox({ item, onClose, onPrev, onNext }) {
             <>
               <h2 className="press-lightbox__title">{info.title}</h2>
               <p className="press-lightbox__artist">{info.artist}</p>
-              <p className="press-lightbox__meta">
-                {info.year} &middot; {info.medium}
-              </p>
-              <p className="press-lightbox__desc">{info.description}</p>
+              <div className="press-lightbox__meta-list">
+                {info.year && <p className="press-lightbox__meta">{info.year}</p>}
+                {info.medium && <p className="press-lightbox__meta">{info.medium}</p>}
+                {info.size && <p className="press-lightbox__meta">{info.size}</p>}
+              </div>
             </>
           ) : (
             <h2 className="press-lightbox__title press-lightbox__title--caption">
@@ -204,6 +205,7 @@ function PressLightbox({ item, onClose, onPrev, onNext }) {
 }
 
 export default function Gallery() {
+  usePageMeta('gallery')
   const gridRef = useRef(null)
   useMasonryLayout(gridRef, GALLERY_ITEMS.length)
   const [activeIndex, setActiveIndex] = useState(null)
@@ -235,7 +237,7 @@ export default function Gallery() {
                     aria-label={`View ${item.info ? item.info.title : item.caption} enlarged`}
                   >
                     <img
-                      src={item.src}
+                      src={item.thumb}
                       alt={item.caption}
                       loading={isEager ? 'eager' : 'lazy'}
                       fetchPriority={isEager ? 'high' : 'auto'}

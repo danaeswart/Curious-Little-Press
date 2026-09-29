@@ -3,8 +3,10 @@ import Reveal from '../../components/Reveal'
 import print1 from '../../assets/services/print1.png'
 import print2 from '../../assets/services/print2.png'
 import './ServicePage.css'
+import usePageMeta from '../../hooks/usePageMeta'
 
 export default function EditionYourWork() {
+  usePageMeta('edition')
   return (
     <article className="service-page service-page--edition">
       <div className="container service-page__grid">
