@@ -6,10 +6,8 @@ import phoneIcon from '../../assets/icons/phone.png'
 import './HomeContactSection.css'
 
 const PHONES = [
-  { number: '+27 79 447 9310', name: 'Marlene Salisbury', role: 'CLP Liaison Officer' },
-  { number: '+27 12 803 2369', name: 'Landline' },
-  { number: '+27 72 699 8090', name: 'Barry van der Westhuizen', role: 'Printmaker' },
-  { number: '+27 72 249 3931', name: 'Rina Stutzer', role: 'CLP Co-ordinator, Founder and Artist' },
+  { number: '012 803 2369', role: 'CLP studio liaison' },
+  { number: '072 249 3931', role: 'CLP studio co-ordinator' },
 ]
 
 function MapCircle({ className = '' }) {
@@ -49,18 +47,13 @@ export default function HomeContactSection() {
 
           <ul className="home-contact__phones">
             {PHONES.map((phone) => (
-              <li key={phone.number + phone.name}>
-                <a href={`tel:${phone.number.replace(/\s+/g, '')}`} className="home-contact__phone-link">
+              <li key={phone.number}>
+                <a href={`tel:+27${phone.number.replace(/\s+/g, '').slice(1)}`} className="home-contact__phone-link">
                   <img src={phoneIcon} alt="" className="home-contact__phone-icon" />
                   <div className="home-contact__phone-content">
                     <span className="home-contact__phone-number">{phone.number}</span>
                     <div className="home-contact__phone-divider" aria-hidden="true" />
-                    <div className="home-contact__phone-meta">
-                      <span className="home-contact__phone-name">{phone.name}</span>
-                      {phone.role && (
-                        <span className="home-contact__phone-role">{phone.role}</span>
-                      )}
-                    </div>
+                    <div className="home-contact__phone-meta">{phone.role}</div>
                   </div>
                 </a>
               </li>
