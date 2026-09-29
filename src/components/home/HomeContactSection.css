@@ -109,8 +109,6 @@
 }
 
 .home-contact__phone-meta {
-  display: flex;
-  justify-content: space-between;
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--color-ink);

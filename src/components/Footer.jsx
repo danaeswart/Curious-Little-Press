@@ -59,9 +59,9 @@ export default function Footer() {
           <a href="tel:+27128032369" className="site-footer__phone">
             <img src={phoneIcon} alt="" aria-hidden="true" className="site-footer__phone-icon" />
             <div className="site-footer__phone-content">
-              <span className="site-footer__phone-number">+27 12 803 2369</span>
+              <span className="site-footer__phone-number">012 803 2369</span>
               <div className="site-footer__phone-divider" aria-hidden="true" />
-              <span className="site-footer__phone-name">Landline</span>
+              <span className="site-footer__phone-name">CLP studio liaison</span>
             </div>
           </a>
         </div>
