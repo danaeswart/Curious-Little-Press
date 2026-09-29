@@ -3,10 +3,12 @@ import Reveal from '../components/Reveal'
 import ServiceCard from '../components/ServiceCard'
 import { SERVICES } from '../data/services'
 import './Services.css'
+import usePageMeta from '../hooks/usePageMeta'
 
 const BASE_DELAY = 150
 
 export default function Services() {
+  usePageMeta('services')
   return (
     <section className="services-page">
       <div className="container">

@@ -3,8 +3,10 @@ import Reveal from '../../components/Reveal'
 import guidance1 from '../../assets/services/guidance1.JPG'
 import guidance2 from '../../assets/services/guidance2.JPG'
 import './ServicePage.css'
+import usePageMeta from '../../hooks/usePageMeta'
 
 export default function AssistedPrinting() {
+  usePageMeta('guidance')
   return (
     <article className="service-page service-page--guidance service-page--facts-after-media">
       <div className="container service-page__grid">

@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import './NotFound.css'
+import usePageMeta from '../hooks/usePageMeta'
 
 export default function NotFound() {
+  usePageMeta('notFound')
   return (
     <section className="not-found">
       <div className="container">

@@ -3,8 +3,10 @@ import Reveal from '../../components/Reveal'
 import depend1 from '../../assets/services/depend1.png'
 import depend2 from '../../assets/services/depend2.png'
 import './ServicePage.css'
+import usePageMeta from '../../hooks/usePageMeta'
 
 export default function IndependentStudioRental() {
+  usePageMeta('independent')
   return (
     <article className="service-page service-page--guidance service-page--facts-after-media">
       <div className="container service-page__grid">
@@ -20,7 +22,7 @@ export default function IndependentStudioRental() {
             <img
               className="service-page__img service-page__img--tall"
               src={depend1}
-              alt="The CLP studio with a drying rack, worktables and an etching press"
+              alt="The open printmaking studio at CLP in Pretoria, with a drying rack, worktables and an etching press"
             />
           </div>
 
