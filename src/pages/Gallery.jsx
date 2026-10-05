@@ -165,7 +165,7 @@ function PressLightbox({ item, onClose, onPrev, onNext }) {
         <div className="press-lightbox__info">
           {info ? (
             <>
-              <h2 className="press-lightbox__title">{info.title}</h2>
+              <h2 className="press-lightbox__title">‘{info.title}’</h2>
               <p className="press-lightbox__artist">{info.artist}</p>
               <div className="press-lightbox__meta-list">
                 {info.year && <p className="press-lightbox__meta">{info.year}</p>}
