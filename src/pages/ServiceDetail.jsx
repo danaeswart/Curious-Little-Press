@@ -2,8 +2,10 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import { getServiceBySlug, SERVICES } from '../data/services'
 import './ServiceDetail.css'
+import usePageMeta from '../hooks/usePageMeta'
 
 export default function ServiceDetail() {
+  usePageMeta('services')
   const { slug } = useParams()
   const service = getServiceBySlug(slug)
 

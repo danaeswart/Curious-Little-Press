@@ -5,12 +5,12 @@ import service4 from '../assets/home/service4.JPG'
 
 export const SERVICES = [
   {
-    slug: 'join-a-workshop',
-    title: 'Join a Workshop',
-    desc: 'Learn techniques through structured group sessions.',
+    slug: 'work-independently',
+    title: 'Work Independently',
+    desc: 'Use the studio for your own projects.',
     detail:
-      'CLP hosts workshops, demonstrations and collaborative group sessions focused on traditional handmade printmaking practices, from introductory technical sessions to more experimental, process-based engagements.',
-    image: service1,
+      'Once inducted, rent bench time and use our presses, plates, and facilities independently, on your own schedule, for your own projects.',
+    image: service4,
   },
   {
     slug: 'work-with-guidance',
@@ -29,12 +29,12 @@ export const SERVICES = [
     image: service3,
   },
   {
-    slug: 'work-independently',
-    title: 'Work Independently',
-    desc: 'Use the studio for your own projects.',
+    slug: 'join-a-workshop',
+    title: 'Join a Workshop',
+    desc: 'Learn techniques through structured group sessions.',
     detail:
-      'Once inducted, rent bench time and use our presses, plates, and facilities independently, on your own schedule, for your own projects.',
-    image: service4,
+      'CLP hosts workshops, demonstrations and collaborative group sessions focused on traditional handmade printmaking practices, from introductory technical sessions to more experimental, process-based engagements.',
+    image: service1,
   },
 ]
 

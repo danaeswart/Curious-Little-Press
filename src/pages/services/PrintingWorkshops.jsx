@@ -3,8 +3,10 @@ import Reveal from '../../components/Reveal'
 import workshop1 from '../../assets/services/workshop1.JPG'
 import workshop2 from '../../assets/services/workshop2.JPG'
 import './ServicePage.css'
+import usePageMeta from '../../hooks/usePageMeta'
 
 export default function PrintingWorkshops() {
+  usePageMeta('workshops')
   return (
     <article className="service-page service-page--workshops">
       <div className="container service-page__grid">
@@ -51,7 +53,7 @@ export default function PrintingWorkshops() {
           <img
             className="service-page__img service-page__img--tall"
             src={workshop2}
-            alt="Printmakers gathered around a worktable during a CLP workshop"
+            alt="Printmakers gathered around a worktable during a printmaking workshop at CLP in Pretoria"
           />
         </Reveal>
 
@@ -59,7 +61,7 @@ export default function PrintingWorkshops() {
           <img
             className="service-page__img service-page__img--wide"
             src={workshop1}
-            alt="A printmaker demonstrating technique to workshop participants"
+            alt="A printmaker demonstrating hand printing technique to workshop participants"
           />
 
           <div className="service-page__facts">
